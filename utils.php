@@ -1,4 +1,18 @@
 <?php
+/*
+ * Copyright (C) 2014 Rishvi Chakka <rishvi.s@gmail.com>
+ *
+ * Author: Rishvi Chakka <rishvi.s@gmail.com>
+ */
+
+/**
+   * @function perform_request
+   * @desc creates twitter api object and returns decoded call response
+   * @param string url api url
+   * @param string getfield get params string to be passed in the url
+   * @param string requestMethod type of request
+   * @return Object response decoded response as object
+   */
 function perform_request($url, $getfield, $requestMethod){
     global $twitter_api;
 
@@ -12,6 +26,14 @@ function perform_request($url, $getfield, $requestMethod){
     return json_decode($response);
 }
 
+/**
+   * @function get_followers
+   * @desc return list of followers in an array for a given screen name
+   * @param string username screen name for which the records are required
+   * @param int count count of records in a single call
+   * @param array pagination current, next and previous page details
+   * @return array result list of followers
+   */
 function get_followers($username, $count, &$pagination){
     global $twitter_api;
 
@@ -45,6 +67,14 @@ function get_followers($username, $count, &$pagination){
     return $result;
 }
 
+/**
+   * @function get_friends
+   * @desc return list of friends in an array for a given screen name
+   * @param string username screen name for which the records are required
+   * @param int count count of records in a single call
+   * @param array pagination current, next and previous page details
+   * @return array result list of friends
+   */
 function get_friends($username, $count, &$pagination){
     global $twitter_api;
 
@@ -78,6 +108,14 @@ function get_friends($username, $count, &$pagination){
     return $result;
 }
 
+/**
+   * @function get_user_timeline
+   * @desc return required count of recent tweets of a user
+   * @param string username screen name for which the records are required
+   * @param int count count of records in a single call
+   * @param int statuses_count total count of life time tweets
+   * @return array list of required number tweets in descending order of time
+   */
 function get_user_timeline($username, $count, &$statuses_count){
     global $twitter_api;
 

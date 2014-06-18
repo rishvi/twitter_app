@@ -1,3 +1,10 @@
+<?php
+/*
+ * Copyright (C) 2014 Rishvi Chakka <rishvi.s@gmail.com>
+ *
+ * Author: Rishvi Chakka <rishvi.s@gmail.com>
+ */
+?>
 <!DOCTYPE html>
 <html>
 <body>
@@ -8,7 +15,9 @@
     </script> 
     <script src="assets/twitter_widget.js" charset="utf-8"></script>
 </head>
+
 <?php
+ini_set('display_errors', 0);
 require_once 'config.php';
 require_once 'lib/TwitterAPIExchange.php';
 require_once 'utils.php';
@@ -30,6 +39,7 @@ if ($username){
     foreach ($response as $value) echo "<li>$value</li><br />";
 }
 ?>
+
 </ul>
 </div>
 </body>

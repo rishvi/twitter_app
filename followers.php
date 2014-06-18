@@ -1,5 +1,11 @@
 <?php
-ini_set('display_errors', 1);
+/*
+ * Copyright (C) 2014 Rishvi Chakka <rishvi.s@gmail.com>
+ *
+ * Author: Rishvi Chakka <rishvi.s@gmail.com>
+ */
+
+ini_set('display_errors', 0);
 require_once 'config.php';
 require_once 'lib/TwitterAPIExchange.php';
 require_once 'utils.php';
