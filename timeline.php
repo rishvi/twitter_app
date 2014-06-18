@@ -26,6 +26,9 @@ $username = $_REQUEST['username'];
 if ($username){
     $count = $twitter_api['friends']['default_count'];
     $response = get_user_timeline($username, $count, $statuses_count);
+
+    //set to zero if null
+    if(!isset($statuses_count)) $statuses_count = 0;
 ?>
 
     <div id="header" style="background-color:#FFA500;" align='center' width='100%'>

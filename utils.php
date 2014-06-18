@@ -132,10 +132,10 @@ function get_user_timeline($username, $count, &$statuses_count){
     $result = array();
     $embed_url = $twitter_api['embed_url'];
     foreach ($response as $key => $value) {
-        $getfield = "?id=".$value->id;
-        $response = perform_request($embed_url, $getfield, $requestMethod);
+        $getfield = "?id=".$value->id_str;
+        $html_response = perform_request($embed_url, $getfield, $requestMethod);
 
-        $result[] = $response->html;
+        $result[] = $html_response->html;
         $statuses_count = $value->user->statuses_count;
     }
 

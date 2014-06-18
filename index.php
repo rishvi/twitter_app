@@ -9,7 +9,6 @@ ini_set('display_errors', 0);
 ?>
 
 <html>
-<head></head>
 <frameset rows="10,90" noresize="noresize">
   <frame name="input" id="input" src="input.php" >
   <frameset cols="50, 50" noresize="noresize">

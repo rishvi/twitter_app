@@ -7,9 +7,7 @@
 ?>
 <!DOCTYPE html>
 <html>
-<body>
 <head> 
-    <meta charset="utf-8">  
     <script language="javascript" 
         src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
     </script>
@@ -17,7 +15,7 @@
 <br />
 <body style='background-color:#47B28F;'>
 <div align='center'>
-<form name='input_form'>
+<form id='input_form'>
     <label><b>
         Enter the username for which the records are to be retrieved: 
     </b></label>
@@ -30,12 +28,13 @@
 </body>
 
 <script type='text/javascript'>
-    $("input_form").submit(function() {
+    $("#input_form").submit(function(event) {
         var username = $("#username").val();
         if(!username) return false;
 
         parent.timeline.location.href = 'timeline.php?username='+username;
         parent.followers.location.href = 'followers.php?username='+username;
         parent.friends.location.href = 'friends.php?username='+username;
-    }
+        return false;
+    });
 </script>
