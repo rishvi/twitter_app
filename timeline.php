@@ -27,11 +27,7 @@ if ($username){
         <?=$username?>'s total lifetime tweets: <?=$statuses_count?>
     </i></b></font><br />
 <?php    
-    foreach ($response as $value) {
-        echo "<li>";
-        echo $value;
-        echo "</li><br />";
-    }
+    foreach ($response as $value) echo "<li>$value</li><br />";
 }
 ?>
 </ul>
