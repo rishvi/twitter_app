@@ -24,7 +24,7 @@ if ($username){
     $response = get_friends($username, $count, $pagination);
 ?>
     <div style="background-color:#FFA500;" align='center' width='100%'>
-    <h1 style="margin-bottom:0;"><?="People following '$username'"?></h1></div>
+    <h1 style="margin-bottom:0;"><?="'$username' is following"?></h1></div>
     <div id="content" style="background-color:#FFD700;float:left;width:100%">
 <?php
 
