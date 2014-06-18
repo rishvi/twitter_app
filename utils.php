@@ -28,8 +28,8 @@ function get_followers($username, $count, &$pagination){
         return array('error' => 1, 'message' => $response->errors[0]->message);
 
     //set pagination details
-    $pagination['previous'] = $response->previous_cursor;
-    $pagination['next'] = $response->next_cursor;
+    $pagination['previous'] = $response->previous_cursor_str;
+    $pagination['next'] = $response->next_cursor_str;
     
     //user details
     $i = 0;
@@ -61,8 +61,8 @@ function get_friends($username, $count, &$pagination){
         return array('error' => 1, 'message' => $response->errors[0]->message);
 
     //set pagination details
-    $pagination['previous'] = $response->previous_cursor;
-    $pagination['next'] = $response->next_cursor;
+    $pagination['previous'] = $response->previous_cursor_str;
+    $pagination['next'] = $response->next_cursor_str;
     
     //user details
     $i = 0;
